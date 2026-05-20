@@ -1,14 +1,14 @@
 # Greedy-skill
 
-### AI Greedy Prediction × PUA Performance × Autonomous Loop
+### AI Greedy Prediction 脳 PUA Performance 脳 Autonomous Loop
 
-> *Stop AI from slacking off — squeeze every drop of predictive power out of it!*
+> *Stop AI from slacking off 鈥?squeeze every drop of predictive power out of it!*
 
 **Version: 0.3.0** | Meta-Learning Multi-Scale Adaptive Prediction Engine
 
 <p align="center">
-  <strong>语言 / Languages:</strong><br>
-  <a href="./README.md">中文</a> |
+  <strong>璇█ / Languages:</strong><br>
+  <a href="./README.md">涓枃</a> |
   English
 </p>
 
@@ -19,14 +19,14 @@
 In a nutshell: an **AI PUA master + prediction beast** combo
 
 It combines:
-- **Meta-Learning** — MAML-style fast adaptation, fast/slow weights working in tandem
-- **Multi-Scale Time Windows** — remembers last 10/50/200 cycles, all at once
-- **Attention Routing** — 7 strategies compete via dot-product attention, AI picks the best play
-- **Hierarchical Pattern Graph** — three-level pattern map L0→L1→L2, layer by layer
-- **CMA-ES Covariance Adaptation** — tuning confidence/momentum/entropy in 3 dimensions
-- **Adversarial Learning** — add noise perturbation, the more you beat it the stronger it gets
-- **Experience Replay** — 100-slot "mistake notebook" buffer
-- **Pareto Multi-Objective** — Oracle rate + entropy + confidence, we want it all
+- **Meta-Learning** 鈥?MAML-style fast adaptation, fast/slow weights working in tandem
+- **Multi-Scale Time Windows** 鈥?short/medium/long term memory, all at once
+- **Attention Routing** 鈥?7 strategies compete via dot-product attention, AI picks the best play
+- **Hierarchical Pattern Graph** 鈥?three-level pattern map with layered reasoning
+- **CMA-ES Covariance Adaptation** 鈥?tuning confidence/momentum/entropy in 3 dimensions
+- **Adversarial Learning** 鈥?noise perturbation, the more you beat it the stronger it gets
+- **Experience Replay** 鈥?"mistake notebook" buffer mechanism
+- **Pareto Multi-Objective** 鈥?Oracle rate + entropy + confidence, we want it all
 
 Built on top of [PUA Framework](https://github.com/tanweai/pua) methodology
 
@@ -36,14 +36,14 @@ Built on top of [PUA Framework](https://github.com/tanweai/pua) methodology
 
 | Feature | Description |
 |---------|-------------|
-| Multi-Scale Time Windows | Short/Medium/Long memory (10/50/200 cycles) |
-| Meta-Learning | MAML-style fast adaptation |
-| Attention Routing | 7-strategy dot-product attention selection |
-| Hierarchical Pattern Graph | 3-level graph (L0→L1→L2) |
-| CMA-ES Adaptation | Covariance matrix adaptation |
-| Adversarial Learning | Noise perturbation for robustness |
-| Experience Replay | 100-buffer, batch sampling |
-| Pareto Optimization | Multi-objective optimization |
+| Multi-Scale Time Windows | Short/Medium/Long memory multi-scale fusion |
+| Meta-Learning | MAML-style fast adaptation with fast/slow dual weights |
+| Attention Routing | 7-strategy dot-product attention dynamic selection |
+| Hierarchical Pattern Graph | Three-level pattern map with layered reasoning |
+| CMA-ES Adaptation | Covariance matrix self-adaptive tuning |
+| Adversarial Learning | Noise perturbation boosts system robustness |
+| Experience Replay | 100-slot mistake notebook with batch sampling |
+| Pareto Optimization | Oracle rate + entropy + confidence multi-objective balance |
 
 ---
 
@@ -63,22 +63,7 @@ node skills/Greedy-skill/scripts/greedy-loop.js --cycles 400 --interval 50 --fla
 
 ### Available Flavors `--flavor`
 
-| Flavor | Style |
-|--------|-------|
-| `alibaba` | 361/Closed-loop/Handhold |
-| `bytedance` | Radical Candor/Always Day 1 |
-| `huawei` | Wolf Warrior/Martial Order |
-| `tencent` | Horse Racing/Fast Iteration |
-| `baidu` | Tech Faith/Basic Plate |
-| `pinduoduo` | Own Business/Hardcore |
-| `meituan` | Do Hard Right Things |
-| `jd` | Righteous Success/Brother Culture |
-| `xiaomi` | Extreme Cost Performance |
-| `netflix` | Keeper Test |
-| `musk` | Hardcore/First Principles |
-| `apple` | A Player/Think Different |
-| `amazon` | Day 1/Customer Obsession |
-| `microsoft` | Three Circles of Impact |
+Supports multiple big tech styles including Alibaba, ByteDance, Huawei, Tencent, Baidu, Pinduoduo, Meituan, JD, Xiaomi, Netflix, Musk, Apple, Amazon, and Microsoft. Switch via the `--flavor` parameter.
 
 ---
 
@@ -86,27 +71,15 @@ node skills/Greedy-skill/scripts/greedy-loop.js --cycles 400 --interval 50 --fla
 
 ```
 greedy-skill/
-├── scripts/
-│   └── greedy-loop.js     # Main script, core engine
-├── references/            # PUA methodology docs
-├── SKILL.md               # Skill definition
-├── README.md              # Chinese documentation (default)
-├── README_en.md           # English documentation
-├── LICENSE                # MIT License
-└── _meta.json             # Metadata
+鈹溾攢鈹€ scripts/
+鈹?  鈹斺攢鈹€ greedy-loop.js     # Main script, core engine
+鈹溾攢鈹€ references/            # PUA methodology docs
+鈹溾攢鈹€ SKILL.md               # Skill definition
+鈹溾攢鈹€ README.md              # Chinese documentation
+鈹溾攢鈹€ README_en.md           # English documentation
+鈹溾攢鈹€ LICENSE                # MIT License
+鈹斺攢鈹€ _meta.json             # Metadata
 ```
-
----
-
-## Version History
-
-| Version | Key Innovation |
-|---------|----------------|
-| V1 | Basic momentum mechanism |
-| V2 | Strategy pool + UCB1 rotation |
-| V3 | Epsilon-greedy + dynamic difficulty |
-| V50 | Quantum-inspired: Bayesian + PID + entanglement |
-| Current | Meta-learning + attention + CMA-ES + replay |
 
 ---
 
@@ -114,35 +87,35 @@ greedy-skill/
 
 This project references [PUA Framework](https://github.com/tanweai/pua) methodology:
 
-- **Closed-Loop Awareness** — Done but not verified? Might as well not done!
-- **Owner Consciousness** — No one else to blame, it's on you
-- **Pressure Escalation** — Gentle pressure, escalating layer by layer
-- **Flavor System** — Alibaba/ByteDance/Huawei/Tencent... each with its own seasoning
+- **Closed-Loop Awareness** 鈥?Done but not verified? Might as well not done!
+- **Owner Consciousness** 鈥?No one else to blame, it's on you
+- **Pressure Escalation** 鈥?Gentle pressure, escalating layer by layer
+- **Flavor System** 鈥?Multiple big tech culture styles switchable on demand
 
 ---
 
 ## How It Works
 
-1. **Strategy Selection** — 7 strategies (conservative/aggressive/exploratory/adaptive/balanced/random/meta) compete via attention mechanism
+1. **Strategy Selection** 鈥?7 strategies (conservative/aggressive/exploratory/adaptive/balanced/random/meta) compete via attention mechanism
 
-2. **Multi-Scale Prediction** — simultaneously look at last 10/50/200 cycles history, weighted fusion
+2. **Multi-Scale Prediction** 鈥?simultaneously observe short/medium/long term history, weighted fusion output
 
-3. **Meta-Learning** — MAML-style, fast weights respond quickly, slow weights learn steadily
+3. **Meta-Learning** 鈥?MAML-style, fast weights respond quickly, slow weights learn steadily
 
-4. **Oracle Verification** — Is the prediction useful? Run the threshold verification to find out!
+4. **Oracle Verification** 鈥?Is the prediction useful? Threshold verification tells all!
 
-5. **Self-Correction** — 5 consecutive failures? Trigger self-correction, switch strategies!
+5. **Self-Correction** 鈥?Consecutive failures trigger self-correction, switch strategies and retry
 
-6. **Pareto Optimization** — balance Oracle rate, entropy, and confidence — no lopsided solutions allowed
+6. **Pareto Optimization** 鈥?balance Oracle rate, entropy, and confidence 鈥?no lopsided solutions allowed
 
 ---
 
 ## License
 
-MIT License — methodology reference [PUA Framework](https://github.com/tanweai/pua)
+MIT License 鈥?methodology reference [PUA Framework](https://github.com/tanweai/pua)
 
 ---
 
 > *Made with passion and a little bit of meta-learning*
 >
-> *If this helped you, star the repo — AI needs encouragement too!*
+> *If this helped you, star the repo 鈥?AI needs encouragement too!*
