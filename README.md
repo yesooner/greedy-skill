@@ -1,148 +1,106 @@
 # Greedy-skill
 
-### AI 贪婪预测 × PUA 绩效 × 自主循环
+### AI 璐┆棰勬祴 脳 PUA 缁╂晥 脳 鑷富寰幆
 
-> *让 AI 不再躺平，榨干最后一滴预测能力！*
+> *璁?AI 涓嶅啀韬哄钩锛屾Θ骞叉渶鍚庝竴婊撮娴嬭兘鍔涳紒*
 
-**Version: 0.3.0** | 元学习多尺度自适应预测引擎
+**Version: 0.3.0** | 鍏冨涔犲灏哄害鑷€傚簲棰勬祴寮曟搸
 
 <p align="center">
-  <strong>语言 / Languages:</strong><br>
-  中文 |
+  <strong>璇█ / Languages:</strong><br>
+  涓枃 |
   <a href="./README_en.md">English</a>
 </p>
 
 ---
 
-## 这是什么？
+## 杩欐槸浠€涔堬紵
 
-简单说：这玩意儿就是一个 **AI 版 PUA 大师 + 预测狂魔**
+绠€鍗曡锛氳繖鐜╂剰鍎垮氨鏄竴涓?**AI 鐗?PUA 澶у笀 + 棰勬祴鐙傞瓟**
 
-它融合了：
-- **元学习** — MAML 风格快速适应，fast/slow 权重双管齐下
-- **多尺度时间窗口** — 近 10 轮/50 轮/200 轮记忆通吃
-- **注意力路由** — 7 种策略点积注意力，AI 自己挑最佳打法
-- **层次模式图** — 三级模式图 L0→L1→L2，层层递进
-- **CMA-ES 协方差适应** — 置信度/动量/熵三维调参
-- **对抗性学习** — 加噪声扰动，越锤越强
-- **经验回放** — 100 条缓冲区的"错题本"
-- **Pareto 多目标优化** — Oracle 通过率 + 熵 + 置信度全都要
+瀹冭瀺鍚堜簡锛?- **鍏冨涔?* 鈥?MAML 椋庢牸蹇€熼€傚簲锛宖ast/slow 鏉冮噸鍙岀榻愪笅
+- **澶氬昂搴︽椂闂寸獥鍙?* 鈥?鐭?涓?闀挎湡璁板繂閫氬悆
+- **娉ㄦ剰鍔涜矾鐢?* 鈥?7 绉嶇瓥鐣ョ偣绉敞鎰忓姏锛孉I 鑷繁鎸戞渶浣虫墦娉?- **灞傛妯″紡鍥?* 鈥?涓夌骇妯″紡鍥惧眰灞傞€掕繘
+- **CMA-ES 鍗忔柟宸€傚簲** 鈥?缃俊搴?鍔ㄩ噺/鐔典笁缁磋皟鍙?- **瀵规姉鎬у涔?* 鈥?鍔犲櫔澹版壈鍔紝瓒婇敜瓒婂己
+- **缁忛獙鍥炴斁** 鈥?"閿欓鏈?缂撳啿鏈哄埗
+- **Pareto 澶氱洰鏍囦紭鍖?* 鈥?Oracle 閫氳繃鐜?+ 鐔?+ 缃俊搴﹀叏閮借
 
-底层基于 [PUA Framework](https://github.com/tanweai/pua) 方法论
-
+搴曞眰鍩轰簬 [PUA Framework](https://github.com/tanweai/pua) 鏂规硶璁?
 ---
 
-## 功能特性
-
-| 功能 | 描述 |
+## 鍔熻兘鐗规€?
+| 鍔熻兘 | 鎻忚堪 |
 |------|------|
-| 多尺度时间窗口 | 短/中/长期记忆 (10/50/200轮) |
-| 元学习 | MAML 风格快速适应 |
-| 注意力路由 | 7 策略点积注意力选择 |
-| 层次模式图 | 3级模式图 (L0→L1→L2) |
-| CMA-ES 适应 | 协方差矩阵适应 |
-| 对抗性学习 | 噪声扰动提升鲁棒性 |
-| 经验回放 | 100条缓冲，批量采样 |
-| Pareto优化 | 多目标优化 |
+| 澶氬昂搴︽椂闂寸獥鍙?| 鐭?涓?闀挎湡璁板繂澶氬昂搴﹁瀺鍚?|
+| 鍏冨涔?| MAML 椋庢牸蹇€熼€傚簲锛宖ast/slow 鏉冮噸鍙岀榻愪笅 |
+| 娉ㄦ剰鍔涜矾鐢?| 7 绉嶇瓥鐣ョ偣绉敞鎰忓姏鍔ㄦ€侀€夋嫨 |
+| 灞傛妯″紡鍥?| 涓夌骇妯″紡鍥?L0鈫扡1鈫扡2 灞傚眰鎺ㄧ悊 |
+| CMA-ES 閫傚簲 | 鍗忔柟宸煩闃佃嚜閫傚簲璋冨弬 |
+| 瀵规姉鎬у涔?| 鍣０鎵板姩鎻愬崌绯荤粺椴佹鎬?|
+| 缁忛獙鍥炴斁 | 100 鏉＄紦鍐插尯閿欓鏈紝鎵归噺閲囨牱澶嶇洏 |
+| Pareto 浼樺寲 | Oracle 閫氳繃鐜?+ 鐔?+ 缃俊搴﹀鐩爣骞宠　 |
 
 ---
 
-## 快速开始
-
+## 蹇€熷紑濮?
 ```bash
 node skills/Greedy-skill/scripts/greedy-loop.js --cycles 400 --interval 50 --flavor alibaba
 ```
 
-### 参数说明
+### 鍙傛暟璇存槑
 
-| 参数 | 含义 | 默认值 |
+| 鍙傛暟 | 鍚箟 | 榛樿鍊?|
 |------|------|--------|
-| `--cycles` | 跑多少轮 | 200 |
-| `--interval` | 隔几轮输出状态 | 10 |
-| `--flavor` | 用哪家大厂味道 | alibaba |
+| `--cycles` | 璺戝灏戣疆 | 200 |
+| `--interval` | 闅斿嚑杞緭鍑虹姸鎬?| 10 |
+| `--flavor` | 鐢ㄥ摢瀹跺ぇ鍘傚懗閬?| alibaba |
 
-### 可选味道 `--flavor`
+### 鍙€夊懗閬?`--flavor`
 
-| 味道 | 风格 |
-|------|------|
-| `alibaba` | 361/闭环/抓手 |
-| `bytedance` | 坦诚/Always Day 1 |
-| `huawei` | 狼性/军令状 |
-| `tencent` | 赛马/小步快跑 |
-| `baidu` | 技术信仰/基本盘 |
-| `pinduoduo` | 本分/硬核 |
-| `meituan` | 做难而正确的事 |
-| `jd` | 正道成功/兄弟文化 |
-| `xiaomi` | 极致性价比 |
-| `netflix` | Keeper Test |
-| `musk` | Hardcore/First Principles |
-| `apple` | A Player/Think Different |
-| `amazon` | Day 1/Customer Obsession |
-| `microsoft` | 三圈影响力 |
-
+鏀寔闃块噷銆佸瓧鑺傘€佸崕涓恒€佽吘璁€佺櫨搴︺€佹嫾澶氬銆佺編鍥€佷含涓溿€佸皬绫炽€丯etflix銆丮usk銆丄pple銆丄mazon銆丮icrosoft 绛夊绉嶅ぇ鍘傞鏍硷紝閫氳繃 `--flavor` 鍙傛暟鍒囨崲銆?
 ---
 
-## 项目结构
+## 椤圭洰缁撴瀯
 
 ```
 greedy-skill/
-├── scripts/
-│   └── greedy-loop.js     # 主脚本，核心引擎
-├── references/            # PUA 方法论文档
-├── SKILL.md               # Skill 定义
-├── README.md              # 中文文档（你在这里）
-├── README_en.md           # English documentation
-├── LICENSE                # MIT 开源许可证
-└── _meta.json             # 元数据
-```
+鈹溾攢鈹€ scripts/
+鈹?  鈹斺攢鈹€ greedy-loop.js     # 涓昏剼鏈紝鏍稿績寮曟搸
+鈹溾攢鈹€ references/            # PUA 鏂规硶璁烘枃妗?鈹溾攢鈹€ SKILL.md               # Skill 瀹氫箟
+鈹溾攢鈹€ README.md              # 涓枃鏂囨。
+鈹溾攢鈹€ README_en.md           # English documentation
+鈹溾攢鈹€ LICENSE                # MIT 寮€婧愯鍙瘉
+鈹斺攢鈹€ _meta.json             # 鍏冩暟鎹?```
 
 ---
 
-## 版本历史
+## 鍩轰簬 PUA Framework
 
-| 版本 | 核心创新 |
-|------|---------|
-| V1 | 基础动量机制 |
-| V2 | 策略池 + UCB1 轮换 |
-| V3 | Epsilon-greedy + 动态难度 |
-| V50 | 量子增强: 贝叶斯 + PID + 纠缠 |
-| Current | 元学习 + 注意力 + CMA-ES + 回放 |
+鏈」鐩弬鑰?[PUA Framework](https://github.com/tanweai/pua) 鏂规硶璁猴細
+
+- **闂幆鎰忚瘑** 鈥?鍋氬畬涓嶉獙璇侊紵绛変簬娌″仛锛?- **Owner 鎰忚瘑** 鈥?杩欎簨娌″埆浜猴紝灏变綘浜?- **鍘嬪姏鍗囩骇** 鈥?娓╁拰鏂藉帇锛屽眰灞傞€掕繘
+- **鍛抽亾绯荤粺** 鈥?澶氱澶у巶鏂囧寲椋庢牸鎸夐渶鍒囨崲
 
 ---
 
-## 基于 PUA Framework
+## 宸ヤ綔鍘熺悊
 
-本项目参考 [PUA Framework](https://github.com/tanweai/pua) 方法论：
+1. **绛栫暐閫夋嫨** 鈥?7 绉嶇瓥鐣ワ紙淇濆畧/婵€杩?鎺㈢储/鑷€傚簲/骞宠　/闅忔満/鍏冿級閫氳繃娉ㄦ剰鍔涙満鍒剁珵浜変笂宀?
+2. **澶氬昂搴﹂娴?* 鈥?鍚屾椂瑙傚療鐭湡銆佷腑鏈熴€侀暱鏈熷巻鍙茶蹇嗭紝鍔犳潈铻嶅悎杈撳嚭
 
-- **闭环意识** — 做完不验证？等于没做！
-- **Owner 意识** — 这事没别人，就你了
-- **压力升级** — 温和施压，层层递进
-- **味道系统** — 阿里/字节/华为/腾讯... 各有各的调调
+3. **鍏冨涔?* 鈥?MAML 椋庢牸锛宖ast weights 蹇€熷搷搴旓紝slow weights 绋虫瀛︿範
 
+4. **Oracle 楠岃瘉** 鈥?棰勬祴鏈夋病鏈夌敤锛熻窇闃堝€奸獙璇佽浜嗙畻锛?
+5. **鑷慨姝?* 鈥?杩炵画澶辫触瑙﹀彂鑷垜绾犳锛屾崲绛栫暐閲嶆潵
+
+6. **Pareto 浼樺寲** 鈥?Oracle 閫氳繃鐜囥€佺喌銆佺疆淇″害涓夌偣骞宠　锛屾嫆缁濆亸绉?
 ---
 
-## 工作原理
-
-1. **策略选择** — 7 种策略（保守/激进/探索/自适应/平衡/随机/元）通过注意力机制竞争上岗
-
-2. **多尺度预测** — 同时看最近 10 轮、50 轮、200 轮的历史，加权融合
-
-3. **元学习** — MAML 风格，fast weights 快速响应，slow weights 稳步学习
-
-4. **Oracle 验证** — 预测有没有用？跑一遍阈值验证说了算！
-
-5. **自修正** — 连续失败 5 次？触发自我纠正，换策略重来！
-
-6. **Pareto 优化** — Oracle 通过率、熵、置信度三点平衡，拒绝偏科
-
----
-
-## 许可证
-
-MIT License - 方法论参考 [PUA Framework](https://github.com/tanweai/pua)
+## 璁稿彲璇?
+MIT License 鈥?鏂规硶璁哄弬鑰?[PUA Framework](https://github.com/tanweai/pua)
 
 ---
 
 > *Made with passion and a little bit of meta-learning*
 >
-> *If this helped you, star the repo — AI needs encouragement too!*
+> *If this helped you, star the repo 鈥?AI needs encouragement too!*
