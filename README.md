@@ -6,6 +6,12 @@
 
 **版本 Version: 0.3.0** | 元学习多尺度自适应预测引擎 🧠
 
+<p align="center">
+  <strong>📝 语言 / Languages:</strong><br>
+  中文 |
+  <a href="./i18n/README.en.md">English</a>
+</p>
+
 ---
 
 ## 🎉 这是什么神仙项目？
@@ -150,13 +156,13 @@ greedy-skill/
 
 ---
 
-## 🤝 许可证
+## 🤝 声明
 
-MIT License - 方法论致敬 [PUA Framework](https://github.com/tanweai/pua)
+ 方法论致敬 [PUA Framework](https://github.com/tanweai/pua)
 
 ---
 
-🇺🇸 [English Documentation](/yesooner/greedy-skill/blob/master/README_en.md)
+
 
 ---
 
