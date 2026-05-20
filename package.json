@@ -1,0 +1,30 @@
+{
+  "name": "greedy-skill",
+  "version": "0.3.0",
+  "description": "AI Greedy Prediction × PUA Performance × Autonomous Loop. Meta-Learning Multi-Scale Adaptive Prediction Engine",
+  "main": "scripts/greedy-loop.js",
+  "scripts": {
+    "start": "node scripts/greedy-loop.js --cycles 200 --flavor alibaba",
+    "test": "node scripts/greedy-loop.js --cycles 400 --interval 50 --flavor alibaba"
+  },
+  "keywords": [
+    "ai",
+    "prediction",
+    "greedy",
+    "pua",
+    "meta-learning",
+    "autonomous",
+    "loop",
+    "attention",
+    "pareto"
+  ],
+  "author": "AI-Greedy + PUA Framework",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanweai/greedy-skill"
+  },
+  "references": [
+    "PUA Framework: https://github.com/tanweai/pua"
+  ]
+}

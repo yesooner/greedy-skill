@@ -1,0 +1,44 @@
+{
+  "name": "Greedy-skill",
+  "version": "0.3.0",
+  "category": "prediction",
+  "source": "greedy-pua",
+  "status": "enabled",
+  "author": "AI-Greedy + PUA Framework",
+  "description": "Greedy Prediction × PUA Performance × Autonomous Loop. Meta-Learning Multi-Scale Adaptive Prediction Engine with: (1) Multi-scale time windows (short/medium/long); (2) Meta-learning (MAML-style fast adaptation); (3) Attention-based strategy routing; (4) Hierarchical pattern graph (HMG); (5) CMA-ES covariance adaptation; (6) Adversarial learning; (7) Experience replay buffer; (8) Pareto multi-objective optimization.",
+  "features": [
+    "multi_scale_time_windows",
+    "meta_learning_maml",
+    "attention_strategy_routing",
+    "hierarchical_pattern_graph",
+    "cmaes_covariance_adaptation",
+    "adversarial_learning",
+    "experience_replay",
+    "pareto_optimization"
+  ],
+  "key_innovations": {
+    "multi_scale": "3 time windows: 10轮(0.5) | 50轮(0.3) | 200轮(0.2)",
+    "meta_learning": "MAML-style fast weights vs slow weights",
+    "attention": "7 strategies with dot-product attention routing",
+    "hmg": "3-level hierarchy: L0(5) → L1(3) → L2(2)",
+    "cmaes": "3x3 covariance matrix for confidence/momentum/entropy",
+    "adversarial": "noise=0.05 for confidence perturbation",
+    "replay": "100 buffer, 10 batch, every 20 cycles",
+    "pareto": "3 objectives: oracle_rate(0.4) + entropy(0.3) + confidence(0.3)"
+  },
+  "components": [
+    "Greedy-skill (meta-learning prediction)",
+    "pua (闭环/Owner/压力升级)",
+    "pua-loop (自主迭代/Oracle验证)"
+  ],
+  "trigger_keywords": [
+    "/Greedy-skill",
+    "贪婪预测",
+    "predict next",
+    "autonomous loop",
+    "自动循环",
+    "try harder",
+    "why still failing",
+    "meta learning"
+  ]
+}
